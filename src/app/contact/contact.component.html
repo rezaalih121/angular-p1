@@ -1,0 +1,44 @@
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Contact me</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-4 mx-auto">
+                <div class="mb-3">
+                  <label for="" class="form-label">Name</label>
+                  <input type="text"
+                    class="form-control" #txtName aria-describedby="helpId" placeholder="Your Name" required
+                    [(ngModel)]="model.txtName">
+                  <small id="helpId" class="form-text text-muted">Help text</small>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Email</label>
+                    <input type="text"
+                      class="form-control" #txtEmail aria-describedby="helpId" placeholder="Your Email" [(ngModel)]="model.txtEmail">
+                    <small id="helpId" class="form-text text-muted">Help text</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Description</label>
+                    <textarea class="form-control" #txtDesc rows="3" [(ngModel)]="model.txtDesc"></textarea>
+                  </div>
+                  <button (click)="sendForm()" type="button" class="btn btn-outline-primary" *ngIf="!isCallingAPI; else  loading">Submit</button>
+                  <ng-template #loading>
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </ng-template>
+                <div class="alert alert-success" *ngIf="isSubmitted">
+                  <ul>
+                    <li> {{name}} </li>
+                    <li> {{email}} </li>
+                    <li> {{desc}} </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

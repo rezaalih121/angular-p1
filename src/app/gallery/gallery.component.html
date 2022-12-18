@@ -1,0 +1,26 @@
+<section>
+    <div class="container">
+        <h1 class="mb-4">Gallery</h1>
+        <div class="row">
+            <div class="col-12">
+                <div *ngFor="let photo of photos" class="gallery p-3 mb-5" >
+                    <h2>{{photo.id}} Author :  {{photo.author}}</h2>
+                    <img [src]="photo.download_url" width="100%" alt="{{photo.author}}"/>
+                    <br>
+                    <a href="{{photo.download_url}}" target="_blank">download</a>
+
+                </div>
+                <div class="lazy-loading-detector">
+                <div *ngIf="!isLoadingPhotos; else loading"></div>
+                <ng-template #loading>
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </ng-template>
+                </div>
+                
+               
+            </div>
+        </div>
+    </div>
+</section>
