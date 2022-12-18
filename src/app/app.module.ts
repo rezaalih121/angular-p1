@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PostsComponent } from './posts/posts.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { ShoppingCartItemComponent } from './shopping-cart-item/shopping-cart-item.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     MainComponent,
     NavbarComponent,
     PostsComponent,
-    GalleryComponent
+    GalleryComponent,
+    ShoppingCartItemComponent
   ],
   imports: [
     BrowserModule,

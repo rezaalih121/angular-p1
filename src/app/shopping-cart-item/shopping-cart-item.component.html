@@ -1,0 +1,34 @@
+<hr class="my-4">
+  
+                    <div class="row mb-4 d-flex justify-content-between align-items-center">
+                      <div class="col-md-2 col-lg-2 col-xl-2">
+                        <img
+                          [src]="item?.image"
+                          class="img-fluid rounded-3" alt="">
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-xl-3">
+                        <h4 class="product-name">{{item?.name}}</h4>
+                        <h5 class="product-desc">{{item?.desc}}</h5>
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                        <button class="btn btn-link px-2"
+                          (click)="add()">
+                          +
+                        </button>
+  
+                        <input  min="0" [value]="item?.count" disabled type="number"
+                          class="form-control form-control-sm" />
+  
+                        <button class="btn btn-link px-2"
+                        (click)="sub()">
+                          -
+                        </button>
+                        <button (click)="delete(item?.id)" class="btn btn-danger">X</button>
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                        <h6 class="mb-0">€ {{item?.price}}</h6>
+                      </div>
+                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                        <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                      </div>
+                    </div>
